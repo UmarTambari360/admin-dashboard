@@ -10,12 +10,12 @@ const TrafficChart = () => {
           <span>Website Traffic</span>
           <div className="flex items-center space-x-4 text-sm">
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-              <span className="text-gray-600">New Visitors</span>
+              <div className="w-3 h-3 mr-2 bg-blue-500 rounded-full"></div>
+              <span className="text-gray-400">New Visitors</span>
             </div>
             <div className="flex items-center">
-              <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-              <span className="text-gray-600">Returning</span>
+              <div className="w-3 h-3 mr-2 bg-green-500 rounded-full"></div>
+              <span className="text-gray-400">Returning</span>
             </div>
           </div>
         </CardTitle>

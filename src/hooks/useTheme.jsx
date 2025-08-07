@@ -19,25 +19,23 @@ export const ThemeProvider = ({ children }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-  const root = document.documentElement;
-
-  let activeTheme = 'light';
-  try {
-    const savedTheme = localStorage.getItem('dashboard-theme');
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      activeTheme = savedTheme;
-    } else {
-      activeTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    setMounted(true);
+    
+    // Try to get saved theme or system preference
+    try {
+      const savedTheme = window.localStorage?.getItem('dashboard-theme');
+      if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+        setTheme(savedTheme);
+      } else {
+        // Check system preference
+        const systemPrefersDark = window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
+        setTheme(systemPrefersDark ? 'dark' : 'light');
+      }
+    } catch (error) {
+      // Fallback to light mode if there's any error
+      setTheme('light');
     }
-  } catch {
-    activeTheme = 'light';
-  }
-
-  setTheme(activeTheme);
-  root.classList.toggle('dark', activeTheme === 'dark');
-  setMounted(true);
-}, []);
-
+  }, []);
 
   useEffect(() => {
     if (!mounted) return;

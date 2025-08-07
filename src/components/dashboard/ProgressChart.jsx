@@ -58,15 +58,14 @@ const ProgressChart = () => {
           </ResponsiveContainer>
         </div>
         
-        {/* Legend */}
-        <div className="flex justify-center space-x-6 mt-4">
+        <div className="flex justify-center mt-4 space-x-6">
           {data.map((item, index) => (
             <div key={index} className="flex items-center">
               <div 
-                className="w-3 h-3 rounded-full mr-2"
+                className="w-3 h-3 mr-2 rounded-full"
                 style={{ backgroundColor: item.color }}
               ></div>
-              <span className="text-sm text-gray-600">{item.name}</span>
+              <span className="text-sm text-gray-400">{item.name}</span>
             </div>
           ))}
         </div>

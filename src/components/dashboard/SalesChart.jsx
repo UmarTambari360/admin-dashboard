@@ -25,7 +25,7 @@ const SalesChart = () => {
               />
               <Tooltip 
                 contentStyle={{
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#fff',
                   border: '1px solid #e5e7eb',
                   borderRadius: '8px',
                   boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'

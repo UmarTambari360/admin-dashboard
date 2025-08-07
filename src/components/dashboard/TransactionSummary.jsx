@@ -88,8 +88,7 @@ const TransactionSummary = () => {
 
   return (
     <div className="space-y-6">
-      {/* Transaction stats */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {transactionStats.map((stat, index) => {
           const IconComponent = stat.icon;
           return (
@@ -97,10 +96,10 @@ const TransactionSummary = () => {
               <CardContent>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-100 mb-1">
+                    <p className="mb-1 text-sm text-gray-500 dark:text-gray-100">
                       {stat.title}
                     </p>
-                    <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                    <p className="text-2xl font-bold text-gray-800 dark:text-gray-100">
                       {stat.title.includes("Revenue") ||
                       stat.title.includes("Income") ||
                       stat.title.includes("Refunds")
@@ -128,7 +127,6 @@ const TransactionSummary = () => {
         })}
       </div>
 
-      {/* Recent Transactions Table */}
       <Card>
         <CardHeader>
           <CardTitle>Recent Transactions</CardTitle>
@@ -141,22 +139,22 @@ const TransactionSummary = () => {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Transaction ID
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Customer
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Amount
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Method
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Status
                   </th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-900 dark:text-gray-100">
+                  <th className="px-4 py-3 font-medium text-left text-gray-900 dark:text-gray-100">
                     Date
                   </th>
                 </tr>
@@ -165,27 +163,27 @@ const TransactionSummary = () => {
                 {recentTransactions.map((transaction) => (
                   <tr
                     key={transaction.id}
-                    className="border-b border-gray-100 hover:bg-gray-50 text-gray-900 dark:text-gray-100 hover:text-gray-800"
+                    className="text-gray-900 border-b border-gray-100 hover:bg-gray-50 dark:text-gray-100 hover:text-gray-800"
                   >
-                    <td className="py-3 px-4">
+                    <td className="px-4 py-3">
                       <span className="font-mono text-sm text-green-500">
                         {transaction.id}
                       </span>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="px-4 py-3">
                       <div className="font-medium tex">
                         {transaction.customer}
                       </div>
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="px-4 py-3">
                       <span className="font-semibold">
                         {formatCurrency(transaction.amount)}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-gray-500 dark:text-gray-200">
+                    <td className="px-4 py-3 text-gray-500 dark:text-gray-200">
                       {transaction.method}
                     </td>
-                    <td className="py-3 px-4">
+                    <td className="px-4 py-3">
                       <span
                         className={`
                         inline-flex px-2 py-1 text-xs font-medium rounded-full capitalize
@@ -195,7 +193,7 @@ const TransactionSummary = () => {
                         {transaction.status}
                       </span>
                     </td>
-                    <td className="py-3 px-4 text-gray-500 dark:text-gray-200 text-sm">
+                    <td className="px-4 py-3 text-sm text-gray-500 dark:text-gray-200">
                       {new Date(transaction.date).toLocaleDateString()}
                     </td>
                   </tr>
@@ -204,15 +202,15 @@ const TransactionSummary = () => {
             </table>
           </div>
 
-          <div className="mt-4 flex items-center justify-between">
+          <div className="flex items-center justify-between mt-4">
             <p className="text-sm text-gray-600 dark:text-gray-300">
               Showing 4 of 127 transactions
             </p>
             <div className="flex space-x-2">
-              <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50  hover:text-black dark:text-gray-100">
+              <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-black dark:text-gray-100">
                 Previous
               </button>
-              <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50  hover:text-black dark:text-gray-100">
+              <button className="px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-black dark:text-gray-100">
                 Next
               </button>
             </div>

@@ -19,13 +19,13 @@ const ThemeToggle = ({ className = '' }) => {
       variant="ghost" 
       size="sm" 
       onClick={toggleTheme}
-      className={`w-12 h-12 ${className}`}
+      className={`w-10 h-10 ${className}`}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? (
-        <Moon size={20} className="text-gray-500 dark:text-gray-100 hover:text-gray-900 transition-colors" />
+        <Moon size={20} className="text-gray-600 transition-colors hover:text-gray-900" />
       ) : (
-        <Sun size={20} className="text-yellow-300 hover:text-yellow-600 transition-colors" />
+        <Sun size={20} className="text-yellow-500 transition-colors hover:text-yellow-400" />
       )}
     </Button>
   );

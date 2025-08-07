@@ -4,7 +4,7 @@ const Card = ({ children, className = '', ...props }) => {
   return (
     <div 
       className={cn(
-        "bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors",
+        "bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 transition-colors w-full",
         className
       )}
       {...props}
@@ -16,7 +16,7 @@ const Card = ({ children, className = '', ...props }) => {
 
 const CardHeader = ({ children, className = '' }) => {
   return (
-    <div className={cn("mb-4", className)}>
+    <div className={cn("mb-3 sm:mb-4", className)}>
       {children}
     </div>
   );
@@ -24,7 +24,7 @@ const CardHeader = ({ children, className = '' }) => {
 
 const CardTitle = ({ children, className = '' }) => {
   return (
-    <h3 className={cn("text-lg font-semibold text-gray-900 dark:text-white", className)}>
+    <h3 className={cn("text-base sm:text-lg font-semibold text-gray-900 dark:text-white", className)}>
       {children}
     </h3>
   );
