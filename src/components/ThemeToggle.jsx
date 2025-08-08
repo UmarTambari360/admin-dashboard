@@ -5,7 +5,6 @@ import Button from './Button';
 const ThemeToggle = ({ className = '' }) => {
   const { theme, toggleTheme, mounted } = useTheme();
 
-  // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
     return (
       <Button variant="ghost" size="sm" className={`w-10 h-10 ${className}`}>

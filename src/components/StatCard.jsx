@@ -34,7 +34,6 @@ const StatCard = ({ title, value, change, trend, color = "blue", icon }) => {
           )}
         </div>
 
-        {/* Main value */}
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             {icon && (

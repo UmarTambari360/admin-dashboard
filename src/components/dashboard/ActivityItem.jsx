@@ -60,7 +60,7 @@ const ActivityItem = ({ activity }) => {
   };
 
   return (
-    <div className="flex items-start space-x-4 p-4 transition-colors rounded-lg">
+    <div className="flex items-start p-4 space-x-4 transition-colors rounded-lg">
       {/* Icon */}
       <div className={`
         flex items-center justify-center w-10 h-10 rounded-full border-2
@@ -76,7 +76,7 @@ const ActivityItem = ({ activity }) => {
             <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
               {activity.user}
             </p>
-            <p className="text-sm text-gray-700 dark:text-gray-200 mt-1">
+            <p className="mt-1 text-sm text-gray-700 dark:text-gray-200">
               {activity.action}
             </p>
             <div className="flex items-center mt-2 space-x-2">
@@ -87,8 +87,7 @@ const ActivityItem = ({ activity }) => {
             </div>
           </div>
           
-          {/* Amount */}
-          <div className="text-right ml-4">
+          <div className="ml-4 text-right">
             <span className={`
               text-sm font-medium
               ${activity.amount.startsWith('-') 

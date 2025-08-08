@@ -17,7 +17,7 @@ const Dashboard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
         <StatCard
           title="Users"
           value={dashboardStats.users.total}
@@ -80,7 +80,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* LinkedIn Card */}
         <Card className="text-white bg-gradient-to-r from-green-600 to-green-400">
           <CardContent className="p-4 sm:p-6">
             <div className="flex items-center justify-between">
@@ -93,7 +92,6 @@ const Dashboard = () => {
           </CardContent>
         </Card>
 
-        {/* Events Card */}
         <Card className="text-white bg-gradient-to-r from-orange-500 to-orange-400">
           <CardContent className="p-4 sm:p-6">
             <div className="flex items-center justify-between">

@@ -12,7 +12,6 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Default to light mode for now - we'll make it smarter later
     return 'light';
   });
 
@@ -21,7 +20,6 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     setMounted(true);
     
-    // Try to get saved theme or system preference
     try {
       const savedTheme = window.localStorage?.getItem('dashboard-theme');
       if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
@@ -32,7 +30,6 @@ export const ThemeProvider = ({ children }) => {
         setTheme(systemPrefersDark ? 'dark' : 'light');
       }
     } catch (error) {
-      // Fallback to light mode if there's any error
       setTheme('light');
     }
   }, []);
@@ -41,10 +38,8 @@ export const ThemeProvider = ({ children }) => {
     if (!mounted) return;
 
     try {
-      // Save theme preference
       window.localStorage?.setItem('dashboard-theme', theme);
       
-      // Apply theme to document
       const root = document.documentElement;
       if (theme === 'dark') {
         root.classList.add('dark');
